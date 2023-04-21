@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-from flask import Flask
 """a script that starts a Flask web application"""
 
+from flask import Flask
 
 app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def hello():
+def file():
     '''A function that returns hello hbnb '''
-
     return 'Hello HBNB!'
 
 
