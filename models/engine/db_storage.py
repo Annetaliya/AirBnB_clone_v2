@@ -1,4 +1,4 @@
-#!/iusr/bin/python3
+#!/usr/bin/python3
 """ database storage management """
 from sqlalchemy import create_engine
 import os
@@ -68,6 +68,10 @@ class DBStorage():
         """ deletes an object from current session """
         if (obj):
             DBStorage.__session.delete(obj)
+
+    def close(self):
+        '''remove method on the private session attribute'''
+        self.__session.close()
 
     def reload(self):
         from models.base_model import BaseModel
